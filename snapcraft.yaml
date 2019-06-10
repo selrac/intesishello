@@ -1,0 +1,23 @@
+name: intesishello
+base: core18
+version: '1.13'
+summary: Greetings to Intesis Members
+description: |
+  This is a small app used to demonstrate using Ubuntu Core with a Raspberry Pi. It just said "Hello"
+
+architectures:
+  - build-on: amd64
+    run-on: armhf
+    
+grade: stable
+confinement: strict
+
+parts:
+  intesishello:
+    plugin: autotools
+    source: .
+    source-type: local
+
+apps:
+  intesishello:
+    command: bin/intesishello
