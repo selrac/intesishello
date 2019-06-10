@@ -1,20 +1,22 @@
-name: intesishello
+name: intesisello
 base: core18
 version: '1.13'
 summary: Greetings to Intesis Members
 description: |
-  This is a small app used to demonstrate using Ubuntu Core with a Raspberry Pi. It just said "Hello"
+  This is a small app used to demonstrate using Ubuntu Core with a Raspberry Pi. 
+  It just said "Hello"
+
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
 
 architectures:
   - build-on: amd64
     run-on: armhf
-    
-grade: stable
-confinement: strict
 
 parts:
   intesishello:
-    plugin: autotools
+    # See 'snapcraft plugins'
+    plugin: make
     source: .
     source-type: local
 
